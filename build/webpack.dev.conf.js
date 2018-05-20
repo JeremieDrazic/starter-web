@@ -20,6 +20,7 @@ const devConfig = merge(baseConfig, {
   devServer: {
     clientLogLevel: 'warning',
     contentBase: config.dev.contentBase,
+    https: config.dev.https,
     host: HOST || config.dev.host,
     port: PORT || config.dev.port,
     hot: true,
@@ -60,6 +61,8 @@ const devConfig = merge(baseConfig, {
   ]
 })
 
+const https = config.dev.https ? 'https' : 'http'
+
 module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = process.env.PORT || config.dev.port
   portfinder.getPort((err, port) => {
@@ -74,7 +77,7 @@ module.exports = new Promise((resolve, reject) => {
       // Add FriendlyErrorsPlugin
       devConfig.plugins.push(new FriendlyErrorsPlugin({
         compilationSuccessInfo: {
-          messages: [`Your application is running here: http://${devConfig.devServer.host}:${port}`],
+          messages: [`Your application is running here: ${https}://${devConfig.devServer.host}:${port}`],
         },
         onErrors: config.dev.notifyOnErrors
           ? utils.createNotifierCallback()

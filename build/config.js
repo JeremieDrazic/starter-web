@@ -8,6 +8,7 @@ module.exports = {
     contentBase: path.resolve(__dirname, '../public'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+    https: false,
     port: 8080,
     host: 'localhost',
     errorOverlay: true,

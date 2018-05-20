@@ -2,9 +2,6 @@ import { join } from 'lodash-es'
 import './styles/styles.styl'
 import bunny from './assets/img/bunny.png'
 
-import react from 'react'
-import reactDom from 'react-dom'
-
 function component () {
   var element = document.createElement('div')
 
@@ -19,9 +16,6 @@ function component () {
   myBunny.src = bunny
 
   element.appendChild(myBunny)
-
-  console.log(react)
-  console.log(reactDom)
 
   return element
 }
