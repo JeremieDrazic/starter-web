@@ -19,8 +19,8 @@ const baseConfig = {
   resolve: {
     extensions: ['*', '.js', '.json', '.css', '.styl', '.scss'],
     alias: {
-      'styles': path.resolve(__dirname, './src/styles/'),
-      'assets': path.resolve(__dirname, './src/assets/')
+      'styles': path.resolve(__dirname, '../src/styles/'),
+      'assets': path.resolve(__dirname, '../src/assets/')
     }
   },
   module: {
