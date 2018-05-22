@@ -2,7 +2,7 @@ import { join } from 'lodash-es'
 import bunny from './assets/img/bunny.png'
 
 export default class Component {
-  init() {
+  init () {
     let element = document.createElement('div')
 
     // loadash is now imported by this script
