@@ -18,5 +18,7 @@ export default class Component {
     element.appendChild(myBunny)
 
     document.body.querySelector('.app').appendChild(element)
+
+    console.log('added to dom')
   }
 }

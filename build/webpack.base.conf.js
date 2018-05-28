@@ -31,6 +31,11 @@ const baseConfig = {
         use: ['babel-loader']
       },
       {
+        test: /\.ejs$/,
+        exclude: /node_modules/,
+        use: ['ejs-loader']
+      },
+      {
         test: /\.css$/,
         exclude: /node_modules/,
         use: utils.cssLoaders({ env: env, preprocessor: false })
@@ -61,11 +66,11 @@ const baseConfig = {
   plugins: []
 }
 
-const viewFiles = glob.sync(process.cwd() + '/public/*.html')
+const viewFiles = glob.sync(process.cwd() + '/public/*.ejs')
 viewFiles.forEach(file => {
   baseConfig.plugins.push(new HtmlWebpackPlugin({
     template: env === 'production' ? config.build.index : config.dev.index,
-    filename: path.basename(file),
+    filename: path.basename(file).replace('.ejs', '.html'),
     template: file,
     inject: true,
     chunksSortMode: env === 'production' ? 'dependency' : 'auto'

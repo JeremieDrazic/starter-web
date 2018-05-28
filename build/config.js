@@ -4,7 +4,7 @@ module.exports = {
   cssPreprocessor: 'stylus',
 
   dev: {
-    index: path.resolve(__dirname, '../public/index.html'),
+    index: path.resolve(__dirname, '../public/index.ejs'),
     contentBase: path.resolve(__dirname, '../public'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
@@ -18,7 +18,7 @@ module.exports = {
   },
 
   build: {
-    index: path.resolve(__dirname, '../public/index.html'),
+    index: path.resolve(__dirname, '../public/index.ejs'),
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
