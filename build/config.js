@@ -1,7 +1,8 @@
 const path = require('path')
 
 module.exports = {
-  cssPreprocessor: 'stylus',
+  cssPreprocessor: 'sass',
+  cssPreprocessorExtension: 'scss',
 
   dev: {
     index: path.resolve(__dirname, '../public/index.ejs'),
