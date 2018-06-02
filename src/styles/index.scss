@@ -1,9 +1,9 @@
-$pink: pink;
+$white: #fff;
 
 body {
-  background-color: $pink;
+  background-color: $white;
   text-align: center;
-  color: green;
+  color: #0000ff;
   transform: translate(20px);
   will-change: transform;
 }
