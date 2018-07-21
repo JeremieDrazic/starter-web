@@ -1,9 +1,14 @@
-$white: #fff;
+$white: #fff000;
+$blue: #ffa0ff;
 
 body {
+  color: $blue;
+
   background-color: $white;
+
   text-align: center;
-  color: #0000ff;
+
   transform: translate(20px);
+
   will-change: transform;
 }

@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/styles/index.scss"],"names":[],"mappings":"AAEA,KACE,sBACA,kBACA,WACA,kCAA0B,wDAC1B,qBAAsB,C","file":"static/css/app.c8bcf54e.css","sourcesContent":["$white: #fff;\n\nbody {\n  background-color: $white;\n  text-align: center;\n  color: #0000ff;\n  transform: translate(20px);\n  will-change: transform;\n}\n"],"sourceRoot":""}

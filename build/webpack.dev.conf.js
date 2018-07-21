@@ -3,6 +3,7 @@ const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const StyleLintPlugin = require('stylelint-webpack-plugin')
 const portfinder = require('portfinder')
 
 const baseConfig = require('./webpack.base.conf.js')
@@ -60,6 +61,14 @@ const devConfig = merge(baseConfig, {
     new webpack.NoEmitOnErrorsPlugin()
   ]
 })
+
+// lint styles for sass
+if (config.preprocessor.name !== 'stylus') {
+  devConfig.plugins.push(new StyleLintPlugin({
+    emitErrors: false,
+    syntax: 'scss'
+  }))
+}
 
 const https = config.dev.https ? 'https' : 'http'
 

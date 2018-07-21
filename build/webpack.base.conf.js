@@ -1,6 +1,5 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const StyleLintPlugin = require('stylelint-webpack-plugin')
 const glob = require('glob')
 
 const config = require('./config.js')
@@ -36,16 +35,10 @@ const baseConfig = {
         exclude: /node_modules/,
         use: ['ejs-loader']
       },
-      {
-        test: /\.css$/,
-        exclude: /node_modules/,
-        use: utils.cssLoaders({ env: env, preprocessor: false })
-      },
-      {
-        test: new RegExp('\\.' + config.cssPreprocessorExtension + '$'),
-        exclude: /node_modules/,
-        use: utils.cssLoaders({ env: env, preprocessor: config.cssPreprocessor })
-      },
+      ...utils.styleRules({
+        env: env,
+        preprocessor: config.preprocessor
+      }),
       {
         test: /\.(png|jpg|svg|gif)$/,
         exclude: /node_modules/,
@@ -64,12 +57,7 @@ const baseConfig = {
     ]
   },
 
-  plugins: [
-    new StyleLintPlugin({
-      emitErrors: false,
-      syntax: 'scss'
-    })
-  ]
+  plugins: []
 }
 
 const viewFiles = glob.sync(process.cwd() + '/public/*.ejs')
